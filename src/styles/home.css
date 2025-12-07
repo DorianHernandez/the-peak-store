@@ -1,0 +1,29 @@
+.page_home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    text-align: center;
+}
+
+.home__title{
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.home__text{
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.home_init{
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}

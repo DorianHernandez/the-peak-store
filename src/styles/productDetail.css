@@ -1,0 +1,38 @@
+.page_detail {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.detail__title {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.detail__img {
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+.detail__price {
+    font-size: 1.5em;
+    color: green;
+    margin-bottom: 15px;
+}
+
+.detail__desc {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.detail__buy {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}

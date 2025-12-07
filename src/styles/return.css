@@ -1,0 +1,20 @@
+.page__return {
+  padding: 20px;
+  text-align: center;
+} 
+
+.return__title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.return__product {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.return__img {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

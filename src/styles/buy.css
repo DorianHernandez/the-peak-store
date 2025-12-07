@@ -1,0 +1,23 @@
+.page_buy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.buy__title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.buy__product {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.buy__img {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
