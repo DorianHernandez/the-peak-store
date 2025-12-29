@@ -1,11 +1,29 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import products from "../data/products";
+//import products from "../data/products";
+import useProducts from "../hooks/useProducts";
 import "../styles/buy.css";
 
 export default function Buy() {
   const { id } = useParams();
+  const products = useProducts();
   const product = products.find((p) => p.id === Number(id));
+
+  if (products.length === 0) {
+    return (
+      <div className="buy_page__charge">
+        <p>Por favor espera un momento, seguimos procesando su compra...</p>
+      </div>
+    );
+  }
+  
+  if (!product) {
+    return (
+      <div className="buy_page__charge">
+        <p>Producto no encontrado</p>
+      </div>
+    );
+  }
 
   return (
     <section className="page_buy">
