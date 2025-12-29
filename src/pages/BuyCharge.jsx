@@ -1,23 +1,44 @@
 import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import products from "../data/products";
+//import products from "../data/products";
+import useProducts from "../hooks/useProducts";
 import "../styles/buyCharge.css";
 
 export default function StaticRedirectPage() {
   const { id } = useParams();
-  const product = products.find((p) => p.id === Number(id));
+  const products = useProducts();
   const navigate = useNavigate();
-  const destinationUrl = `/buy/${product.id}`;
+
+  const product = products.find((p) => p.id === Number(id));
+  const destinationUrl = product ? `/buy/${product.id}` : null;
   const waitTime = 3000;
 
   useEffect(() => {
-    const timerId = setTimeout(() => {
-      navigate(destinationUrl);
-    }, waitTime);
-    return () => {
-      clearTimeout(timerId);
-    };
+    if (destinationUrl) {
+      const timerId = setTimeout(() => {
+        navigate(destinationUrl);
+      }, waitTime);
+      return () => {
+        clearTimeout(timerId);
+      };
+    }
   }, [navigate, destinationUrl, waitTime]);
+
+  if (products.length === 0) {
+    return (
+      <div className="buy_page__charge">
+        <p>Por favor espera un momento, estamos procesando tu compra...</p>
+      </div>
+    );
+  }
+
+  if (!product) {
+    return (
+      <div className="buy_page__charge">
+        <p>Producto no encontrado</p>
+      </div>
+    );
+  }
 
   return (
     <div className="buy_page__charge">
