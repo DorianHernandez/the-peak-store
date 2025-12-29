@@ -1,10 +1,29 @@
+import React from "react";
 import { useParams, } from "react-router-dom";
-import products from "../data/products";
+//import products from "../data/products";
+import useProducts from "../hooks/useProducts";
 import "../styles/returnDetail.css";
 
 export default function ReturnDetails() {
   const { id } = useParams();
+  const products = useProducts();
   const product = products.find((p) => p.id === Number(id));
+  if (products.length === 0) {
+    return (
+      <div className="buy_page__charge">
+        <p>Por favor espera un momento, estamos procesando su solicitud...</p>
+      </div>
+    );
+  }
+
+  if (!product) {
+    return (
+      <div className="buy_page__charge">
+        <p>Producto no encontrado</p>
+      </div>
+    );
+  }
+
   const handleNavigation = () => {
     window.location.href = `/return/${product.id}`;
   }
