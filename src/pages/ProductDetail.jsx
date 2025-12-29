@@ -1,10 +1,12 @@
 import React from 'react';
 import { useParams, Link } from "react-router-dom";
-import products from "../data/products";
+//import products from "../data/products";
+import useProducts from "../hooks/useProducts";
 import "../styles/productDetail.css";
 
 export default function ProductDetail() {
   const { id } = useParams();
+  const products = useProducts();
   const product = products.find((p) => p.id === Number(id));
 
   if (!product) return <p>Producto no encontrado</p>;
