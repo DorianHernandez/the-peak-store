@@ -34,4 +34,4 @@ export default function ProductsDev() {
       <ProductListDev products={products} />
     </section>
   );
-}
+} 
