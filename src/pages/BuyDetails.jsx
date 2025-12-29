@@ -1,10 +1,13 @@
 import { useParams, } from "react-router-dom";
-import products from "../data/products";
+//import products from "../data/products";
+import useProducts from "../hooks/useProducts";
 import "../styles/buyDetails.css";
 
 export default function BuyDetails() {
   const { id } = useParams();
+  const products = useProducts();
   const product = products.find((p) => p.id === Number(id));
+  if (!product) return <p>Producto no encontrado</p>;
   const handleNavigation = () => {
     window.location.href = `/buy-charge/${product.id}`;
   }
