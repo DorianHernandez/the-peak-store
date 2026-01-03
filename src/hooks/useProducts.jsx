@@ -7,7 +7,7 @@ export default function useProducts() {
   useEffect(() => {
     console.log("Llamando al backend...");
 
-    fetch(`${import.meta.env.VITE_BACKEND_URL}/operador/productos`)
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/operador/productos`)
       .then((response) => {
         console.log("Status:", response.status);
         return response.json();
