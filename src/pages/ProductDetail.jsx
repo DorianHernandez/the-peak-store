@@ -18,7 +18,7 @@ export default function ProductDetail() {
       <p className="detail__price">${product.price}</p>
       <p className="detail__desc">{product.description}</p>
 
-      <Link className="detail__buy" to={`/buy-details/${product.id}`}>Comprar</Link>
+      <Link className="detail__buy" to={`/buy-charge/${product.id}`}>Comprar</Link>
     </section>
   );
 }
