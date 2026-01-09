@@ -16,6 +16,8 @@
 .product-card__img {
     border-radius: 8px; 
     margin-bottom: 15px; 
+    max-width: 100%;
+    height: auto;
 }
 
 .product-card__name {

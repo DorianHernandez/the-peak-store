@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 //import products from "../data/products";
 import useProducts from "../hooks/useProducts";
 import "../styles/buy.css";
@@ -30,6 +30,10 @@ export default function Buy() {
       <h2 className="buy__title">Compra realizada</h2>
       <img className="buy__img" src={product.image} alt={product.name} width={400} />
       <p className="buy__product">{product.name}</p>
+      
+      <Link to="/products" className="buy__back-link">
+        Seguir comprando
+      </Link>
     </section>
   );
 }

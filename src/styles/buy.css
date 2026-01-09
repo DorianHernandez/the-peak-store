@@ -21,3 +21,18 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.buy__back-link {
+  margin-top: 30px;
+  padding: 12px 24px;
+  background-color: #27ae60;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.buy__back-link:hover {
+  background-color: #219150;
+}
