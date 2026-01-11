@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 //import products from "../data/products";
 import useProducts from "../hooks/useProducts";
 import "../styles/return.css";
@@ -24,12 +24,16 @@ export default function Return() {
       </div>
     );
   }
-  
+
   return (
     <section className="page__return">
       <h2 className="return__title">Solicitud de devolución iniciada</h2>
       <img className="return__img" src={product.image} alt={product.name} width={400} />
       <p className="return__product">{product.name}</p>
+
+      <Link to="/productsDev" className="buy__back-link">
+          Devolver otro producto
+      </Link>
     </section>
   );
 }
